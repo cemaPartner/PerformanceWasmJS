@@ -5,10 +5,83 @@
 
   <section class="content">
     <mat-card class="card">
-      <mat-card-title>Tests WebAssembly</mat-card-title>
+      <mat-card-title>Tests</mat-card-title>
       <mat-card-content>
-        <!-- Contenu pour WebAssembly -->
-        Description et tests ici.
+        <div class="button-test">
+          <button mat-flat-button (click)="lancerTest('fibonacci')" [disabled]="chargement['fibonacci']">
+            <ng-container *ngIf="!chargement['fibonacci']; else loadingSpinner">
+              Test Fibonacci
+            </ng-container>
+            <ng-template #loadingSpinner>
+              <mat-progress-spinner
+                diameter="20"
+                mode="indeterminate"
+                color="accent"
+                strokeWidth="3">
+              </mat-progress-spinner>
+            </ng-template>
+          </button>
+        </div>
+        <div class="button-test">
+          <button mat-flat-button (click)="lancerTest('tri')" [disabled]="chargement['tri']">
+            <ng-container *ngIf="!chargement['tri']; else loadingSpinner">
+              Test Tri de tableau
+            </ng-container>
+            <ng-template #loadingSpinner>
+              <mat-progress-spinner
+                diameter="20"
+                mode="indeterminate"
+                color="accent"
+                strokeWidth="1">
+              </mat-progress-spinner>
+            </ng-template>
+          </button>
+        </div>
+        <div class="button-test">
+          <button mat-flat-button (click)="lancerTest('matrice')" [disabled]="chargement['matrice']">
+            <ng-container *ngIf="!chargement['matrice']; else loadingSpinner">
+              Test Multiplication de matrices
+            </ng-container>
+            <ng-template #loadingSpinner>
+              <mat-progress-spinner
+                diameter="20"
+                mode="indeterminate"
+                color="accent"
+                strokeWidth="1">
+              </mat-progress-spinner>
+            </ng-template>
+          </button>
+        </div>
+        <div class="button-test">
+          <button mat-flat-button (click)="lancerTest('recherche')" [disabled]="chargement['recherche']">
+            <ng-container *ngIf="!chargement['recherche']; else loadingSpinner">
+              Test Recherche dans liste
+            </ng-container>
+            <ng-template #loadingSpinner>
+              <mat-progress-spinner
+                diameter="20"
+                mode="indeterminate"
+                color="accent"
+                strokeWidth="1">
+              </mat-progress-spinner>
+            </ng-template>
+          </button>
+        </div>
+        <div class="button-test">
+          <button mat-flat-button (click)="lancerTest('compression')" [disabled]="chargement['compression']">
+            <ng-container *ngIf="!chargement['compression']; else loadingSpinner">
+              Test Compression RLE
+            </ng-container>
+            <ng-template #loadingSpinner>
+              <mat-progress-spinner
+                diameter="20"
+                mode="indeterminate"
+                color="accent"
+                strokeWidth="1">
+              </mat-progress-spinner>
+            </ng-template>
+          </button>
+        </div>
       </mat-card-content>
     </mat-card>
 

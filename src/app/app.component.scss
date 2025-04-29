@@ -1,4 +1,3 @@
-/* MAIN STRUCTURE */
 main {
   width: 100%;
   height: 100vh;
@@ -8,8 +7,6 @@ main {
   overflow: hidden;
 }
 
-
-/* HEADER FIXE EN HAUT */
 .header {
   position: fixed;
   top: 0;
@@ -27,16 +24,14 @@ main {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* CONTENT JUSTE EN DESSOUS */
 .content {
-  margin-top: 80px; /* Espace pour ne pas passer sous le header */
+  margin-top: 80px;
   width: 100%;
   height: calc(100vh - 80px);
   display: flex;
   flex-direction: row;
 }
 
-/* CARDS */
 .card {
   flex: 1 1 50%;
   display: flex;
@@ -47,15 +42,16 @@ main {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   background: white;
+  align-items: center;
+  text-align: center;
 }
 
-/* RESPONSIVE pour petits écrans */
-@media (max-width: 768px) {
-  .content {
-    flex-direction: column;
-  }
-  .card {
-    flex: 1 1 100%;
-    max-width: 100%;
-  }
+.button-test {
+  display: flex;
+  justify-content: center;
+  margin: 0.5rem 0;
+}
+
+mat-card-content button {
+  min-width: 120px;
 }
